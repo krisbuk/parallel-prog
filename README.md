@@ -12,7 +12,7 @@
 
 В ходе работы был проведен анализ эффективности алгоритма на различных объемах данных (от $10\times10$ до $500\times500$). Результаты замера производительности в **GFLOPS** представлены на графике ниже:
 
-![Matrix Multiplication Performance](performance.png)
+![Matrix Multiplication Performance](lab1/performance.png)
 
 ---
 
