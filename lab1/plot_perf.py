@@ -1,21 +1,28 @@
+import os, subprocess, time, random
 import matplotlib.pyplot as plt
 
-sizes = ['10', '100', '200', '300', '400', '500']
-gflops = [0.00, 2.00, 4.00, 0.75, 3.05, 2.32]
+EXE = "./lab1.exe" if os.name == "nt" else "./lab1"
+subprocess.run(["g++", "-O3", "lab1.cpp", "-o", EXE])
 
-plt.figure(figsize=(7, 4.5))
+SIZES = [10, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500]
+gflops_list = []
 
-plt.bar(sizes, gflops, color="purple", width=0.5, alpha=0.85)
+for n in SIZES:
+    for name in ["matrixA.txt", "matrixB.txt"]:
+        with open(name, "w") as f:
+            f.write(f"{n}\n" + "\n".join(" ".join(f"{random.random():.2f}" for _ in range(n)) for _ in range(n)))
+    t0 = time.perf_counter()
+    subprocess.run([EXE], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    dt = time.perf_counter() - t0
+    
+    gflops = (2 * (n ** 3)) / (dt * 1e9) if dt > 0 else 0
+    gflops_list.append(gflops)
+    print(f"N = {n}: {gflops:.2f} GFLOPS")
 
-plt.title("Matrix Multiplication Performance")
-plt.xlabel("Matrix Size (n x n)")
-plt.ylabel("Performance (GFLOPS)")
-plt.grid(axis='y', linestyle="--", alpha=0.5)
-
-for i, y in enumerate(gflops):
-    plt.text(i, y + 0.08, f"{y:.2f}", ha="center", fontsize=9, fontweight="bold")
-
-plt.tight_layout()
-
-plt.savefig("performance.png", dpi=150)
+plt.plot(SIZES, gflops_list, 'r-o', linewidth=2)
+plt.title("Производительность процессора на lab1.cpp")
+plt.xlabel("Размер матрицы N")
+plt.ylabel("Производительность (GFLOPS)")
+plt.grid(True)
+plt.savefig("performance.png", dpi=300)
 plt.show()
