@@ -1,0 +1,92 @@
+=== N = 256 ===
+Generating matrix 256x256...
+Files matrixA.txt and matrixB.txt were successfully created!
+
+Verification of results:
+SUCCESS! The matrices match.
+CUDA calculation completed. Kernel=naive, block=16x16, grid=16x16, time=0.2775 ms. Results saved to result.txt
+Running automated verification!
+
+Verification of results:
+SUCCESS! The matrices match.
+CUDA calculation completed. Kernel=tiled, block=8x8, grid=32x32, time=0.2702 ms. Results saved to result.txt
+Running automated verification!
+
+Verification of results:
+SUCCESS! The matrices match.
+CUDA calculation completed. Kernel=tiled, block=16x16, grid=16x16, time=0.2621 ms. Results saved to result.txt
+Running automated verification!
+
+Verification of results:
+SUCCESS! The matrices match.
+CUDA calculation completed. Kernel=tiled, block=32x32, grid=8x8, time=0.3103 ms. Results saved to result.txt
+Running automated verification!
+=== N = 512 ===
+Generating matrix 512x512...
+Files matrixA.txt and matrixB.txt were successfully created!
+
+Verification of results:
+SUCCESS! The matrices match.
+CUDA calculation completed. Kernel=naive, block=16x16, grid=32x32, time=1.9937 ms. Results saved to result.txt
+Running automated verification!
+
+Verification of results:
+SUCCESS! The matrices match.
+CUDA calculation completed. Kernel=tiled, block=8x8, grid=64x64, time=2.0511 ms. Results saved to result.txt
+Running automated verification!
+
+Verification of results:
+SUCCESS! The matrices match.
+CUDA calculation completed. Kernel=tiled, block=16x16, grid=32x32, time=2.0122 ms. Results saved to result.txt
+Running automated verification!
+
+Verification of results:
+SUCCESS! The matrices match.
+CUDA calculation completed. Kernel=tiled, block=32x32, grid=16x16, time=2.1105 ms. Results saved to result.txt
+Running automated verification!
+=== N = 1024 ===
+Generating matrix 1024x1024...
+Files matrixA.txt and matrixB.txt were successfully created!
+
+Verification of results:
+SUCCESS! The matrices match.
+CUDA calculation completed. Kernel=naive, block=16x16, grid=64x64, time=15.6088 ms. Results saved to result.txt
+Running automated verification!
+
+Verification of results:
+SUCCESS! The matrices match.
+CUDA calculation completed. Kernel=tiled, block=8x8, grid=128x128, time=16.1536 ms. Results saved to result.txt
+Running automated verification!
+
+Verification of results:
+SUCCESS! The matrices match.
+CUDA calculation completed. Kernel=tiled, block=16x16, grid=64x64, time=15.6314 ms. Results saved to result.txt
+Running automated verification!
+
+Verification of results:
+SUCCESS! The matrices match.
+CUDA calculation completed. Kernel=tiled, block=32x32, grid=32x32, time=16.4444 ms. Results saved to result.txt
+Running automated verification!
+=== N = 2048 ===
+Generating matrix 2048x2048...
+Files matrixA.txt and matrixB.txt were successfully created!
+
+Verification of results:
+SUCCESS! The matrices match.
+CUDA calculation completed. Kernel=naive, block=16x16, grid=128x128, time=88.2268 ms. Results saved to result.txt
+Running automated verification!
+
+Verification of results:
+SUCCESS! The matrices match.
+CUDA calculation completed. Kernel=tiled, block=8x8, grid=256x256, time=95.2433 ms. Results saved to result.txt
+Running automated verification!
+
+Verification of results:
+SUCCESS! The matrices match.
+CUDA calculation completed. Kernel=tiled, block=16x16, grid=128x128, time=124.5471 ms. Results saved to result.txt
+Running automated verification!
+
+Verification of results:
+SUCCESS! The matrices match.
+CUDA calculation completed. Kernel=tiled, block=32x32, grid=64x64, time=130.6665 ms. Results saved to result.txt
+Running automated verification!
